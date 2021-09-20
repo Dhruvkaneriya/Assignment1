@@ -39,15 +39,18 @@ namespace A1
 	class CardPicker
 	{
 		static Random random = new Random(1);
-		/// <summary>
-		/// Picks a random (with replacement) number of cards.
-		/// </summary>
-		/// <param name="numCards">The number of cards to choose at random.</param>
-		/// <returns>An array of strings where each string represents a card.</returns>
+
 		public static string[] PickSomeCards(int numCards)
 		{
-			// Use RandomValue() & RandomSuit() to help you here
-			throw new NotImplementedException();
+			int totalcards = 52;
+			string[] user_input_cards = new string[totalcards];
+			for (int i = 1; i <= numCards; i++)
+			{
+				string random_value = RandomValue();
+				string random_suit = RandomSuit();
+				user_input_cards[i - 1] = random_value + " of " + random_suit;
+			}
+			return user_input_cards;
 		}
 		/// <summary>
 		/// Chooses a random value for a card (Ace, 2, 3, ... , Queen, King)
