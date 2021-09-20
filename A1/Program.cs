@@ -60,13 +60,12 @@ namespace A1
 			int faces_index = random.Next(face.Count);
 			return face[faces_index];
 		}
-		/// <summary>
-		/// Chooses a random suit for a card (Clubs, Diamonds, Hearts, Spades)
-		/// </summary>
-		/// <returns>A string that represents the suit of a card.</returns>
+
 		private static string RandomSuit()
 		{
-			throw new NotImplementedException();
+			var suit = new List<string> { "Hearts", "Clubs", "Diamonds", "Spades" };
+			int suits_index = random.Next(suit.Count);
+			return suit[suits_index];
 		}
 	}
 }
