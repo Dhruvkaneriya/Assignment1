@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace A1
 {
@@ -52,13 +53,12 @@ namespace A1
 			}
 			return user_input_cards;
 		}
-		/// <summary>
-		/// Chooses a random value for a card (Ace, 2, 3, ... , Queen, King)
-		/// </summary>
-		/// <returns>A string that represents the value of a card</returns>
+
 		private static string RandomValue()
 		{
-			throw new NotImplementedException();
+			var face = new List<string> { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king" };
+			int faces_index = random.Next(face.Count);
+			return face[faces_index];
 		}
 		/// <summary>
 		/// Chooses a random suit for a card (Clubs, Diamonds, Hearts, Spades)
